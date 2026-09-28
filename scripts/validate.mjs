@@ -22,7 +22,7 @@ for (const [,link] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
 }
 for (const target of html.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)) assert(target[0].includes('noopener noreferrer'), 'External target needs rel protection');
 for (const section of ['direction','team','recruit','weekly','battle','sources']) assert(ids.includes(section), `Missing guide section: ${section}`);
-assert(html.includes('进度待对齐'), 'Unconfirmed progress must stay explicit');
+assert(html.includes('阵容待对齐'), 'Unconfirmed roster and chapter must stay explicit');
 assert(html.includes('困难 / 经典'), 'Difficulty context missing');
 const files = await readdir(root);
 assert.deepEqual(files.sort(), ['.nojekyll','icon.svg','index.html','styles.css'].sort(), 'Unexpected publishing artifact');
